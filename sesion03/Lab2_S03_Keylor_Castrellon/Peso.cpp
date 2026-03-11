@@ -16,24 +16,57 @@ double* crearRegistro(int& cantidad)
 
 void ingresarPesos(double* pesos, int cantidad)
 {
+	std::cout << "Ingrese los pesos" << std::endl;
+	for (int i = 0; i < cantidad; i++)
+	{
+		std::cout << "Ingrese el peso del paquete " << i + 1 << " en kg:" << std::endl;
+		std::cin >> pesos[i];
 
-	
-
-
-
+		while (pesos[i] < 0)
+		{
+			std::cout << "El peso no puede ser negativo" << std::endl;
+			std::cin >> pesos[i];
+		}
+	}
+	std::cout << "Registro completado"<<std::endl;
 }
 
 double calcularPesoTotal(const double* pesos, int cantidad)
 {
-	return 0.0;
+	double pesoT= 0.0;
+	for (int i = 0; i < cantidad; i++)
+	{
+		pesoT += pesos[i];
+	}
+	return pesoT;
 }
 
 int contarSobreLimite(const double* pesos, int cantidad, double limite)
 {
-	return 0;
+	int contador = 0;
+	for (int i = 0; i < cantidad; i++)
+	{
+		if (pesos[i] > limite)
+		{
+			contador++;
+		}
+	}
+	return contador;
 }
 
-const double* buscarMasPesado(const double* pesos, int cantidad)
+ double buscarMasPesado(const double* pesos, int cantidad)
 {
-	return nullptr;
+	if(cantidad<=0||pesos==nullptr)
+	{
+		return 0;
+	}
+	const double* maxptr = &pesos[0];
+	for (int i=0; i < cantidad; i++)
+	{
+		if (pesos[i] > *maxptr)
+		{
+			maxptr = &pesos[i];
+		}
+	}
+	return *maxptr;
 }

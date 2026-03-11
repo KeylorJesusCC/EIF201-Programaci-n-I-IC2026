@@ -125,11 +125,9 @@
   <ItemGroup>
     <ClCompile Include="Lab2_S03_Keylor_Castrellon.cpp" />
     <ClCompile Include="Peso.cpp" />
-    <ClCompile Include="temperatura.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Peso.h" />
-    <ClInclude Include="temperatura.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
